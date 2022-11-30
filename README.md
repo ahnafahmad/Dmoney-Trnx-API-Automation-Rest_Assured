@@ -41,7 +41,6 @@ allure generate allure-results --clean -o allure-report
  ```
  allure serve allure-results
 ```
-```
 
 
 ## Selenium TestNG Automation Report Image
