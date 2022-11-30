@@ -10,20 +10,21 @@ import java.io.IOException;
 public class TestRunner {
 
 
-    @Test(priority = 1, description = "User can do Login Unsuccessfully With Wrong Email")
+    @Test(priority = 1, description = "Customer can do Login Unsuccessfully With Wrong Email")
     public void doLoginWithWrongEmail() throws ConfigurationException, IOException {
-        Login login = new Login();
-        login.loginApiWithWrongApi("ahnaf@grr.la", "1234");
+        LoginWithCustomer loginWithCustomer = new LoginWithCustomer();
+        loginWithCustomer.loginApiWithWrongEmail("ahnaf@grr.la", "1234");
         String messageExpected = "User not found";
-        Assert.assertEquals(login.getMessage(), messageExpected);
+        Assert.assertEquals(loginWithCustomer.getMessage(), messageExpected);
     }
 
-    @Test(priority = 2, description = "User can do Login Successfully With Valid Credentials")
-    public void doLogin() throws ConfigurationException, IOException {
-        Login login = new Login();
-        login.callingLoginAPI("salman@grr.la", "1234");
+    @Test(priority = 2, description = "Customer can do Login Successfully With Valid Credentials")
+    public void doLoginWithCustomer() throws IOException, ConfigurationException {
+        LoginWithCustomer loginWithCustomer = new LoginWithCustomer();
+        loginWithCustomer.callingLoginAPI();
         String messageExpected = "Login successfully";
-        Assert.assertEquals(login.getMessage(), messageExpected);
+        Assert.assertEquals(loginWithCustomer.getMessage(), messageExpected);
+
     }
 
     @Test(priority = 3, description = "Creating Customer Successfully")

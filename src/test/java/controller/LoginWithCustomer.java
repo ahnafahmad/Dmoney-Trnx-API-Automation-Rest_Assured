@@ -12,9 +12,9 @@ import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 
-public class Login extends Setup {
+public class LoginWithCustomer extends Setup {
 
-    public Login() throws IOException {
+    public LoginWithCustomer() throws IOException {
         initConfig();
     }
 
@@ -28,14 +28,16 @@ public class Login extends Setup {
         this.message = message;
     }
 
-
-    public void callingLoginAPI(String email, String password) throws ConfigurationException, IOException {
+    public void callingLoginAPI() throws ConfigurationException, IOException {
         RestAssured.baseURI = prop.getProperty("BASE_URL");
-        LoginModel loginModel = new LoginModel(email, password);
+
         Response res =
                 given()
                         .contentType("application/json")
-                        .body(loginModel)
+                        .body("{\n" +
+                                "    \"email\":\"" + prop.getProperty("Customer_Email") + "\",\n" +
+                                "    \"password\":\"" + prop.getProperty("Customer_Password") + "\"\n" +
+                                "}")
                         .when()
                         .post("/user/login")
                         .then()
@@ -48,8 +50,7 @@ public class Login extends Setup {
         Utils.setEnvVariable("TOKEN", token);
     }
 
-
-    public void loginApiWithWrongApi(String email, String password){
+    public void loginApiWithWrongEmail(String email, String password){
         RestAssured.baseURI = prop.getProperty("BASE_URL");
         LoginModel loginModel = new LoginModel(email, password);
         Response res =
@@ -65,4 +66,5 @@ public class Login extends Setup {
         String message = jsonpath.get("message");
         setMessage(message);
     }
+
 }

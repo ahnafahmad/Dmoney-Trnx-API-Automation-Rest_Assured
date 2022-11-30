@@ -40,7 +40,6 @@ public class CreateCustomer extends Setup {
         String role = "Customer";
 
         RestAssured.baseURI = prop.getProperty("BASE_URL");
-//        CreateCustomerModel createCustomerModel= new CreateCustomerModel(name,email, password,phoneNumber,nid,role);
 
         Response res =
                 given()
@@ -55,7 +54,6 @@ public class CreateCustomer extends Setup {
                                 "    \"nid\":\"" + nid + "\",\n" +
                                 "    \"role\":\"Customer\"\n" +
                                 "}")
-//                        .body(createCustomerModel)
                         .when()
                         .post("/user/create")
                         .then().assertThat().statusCode(201).extract().response();
@@ -70,8 +68,24 @@ public class CreateCustomer extends Setup {
         String cutomerNumber = jsonpath.get("user.phone_number").toString();
         System.out.println(cutomerNumber);
 
+        String customerEmail = jsonpath.get("user.email").toString();
+        System.out.println(customerEmail);
+
+        String customerPassword = jsonpath.get("user.password").toString();
+        System.out.println(customerPassword);
+
+        String customerName = jsonpath.get("user.name").toString();
+        System.out.println(customerName);
+
+        String customerNid = jsonpath.get("user.nid").toString();
+        System.out.println(customerNid);
+
         Utils.setEnvVariable("Customer-id", id);
         Utils.setEnvVariable("Customer_Phone_Number", cutomerNumber);
+        Utils.setEnvVariable("Customer_Email", customerEmail);
+        Utils.setEnvVariable("Customer_Password", customerPassword);
+        Utils.setEnvVariable("Customer_Name", customerName);
+        Utils.setEnvVariable("Customer_Nid", customerNid);
 
     }
 
@@ -92,7 +106,6 @@ public class CreateCustomer extends Setup {
                                 "    \"nid\":\"" + "1933957246" + "\",\n" +
                                 "    \"role\":\"Customer\"\n" +
                                 "}")
-//                        .body(createCustomerModel)
                         .when()
                         .post("/user/create")
                         .then().assertThat().statusCode(208).extract().response();
