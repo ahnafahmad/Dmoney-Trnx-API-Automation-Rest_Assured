@@ -43,7 +43,7 @@ allure generate allure-results --clean -o allure-report
 ```
 
 
-## Selenium TestNG Automation Report Image
+## Rest Assured TestNG API Automation Allure Report Image
 
 
 ![1](https://user-images.githubusercontent.com/58990500/204823153-6c01bcb5-f097-4f6e-9cf2-02a494bcbec0.PNG)
