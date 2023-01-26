@@ -5,10 +5,10 @@ import org.apache.commons.configuration.ConfigurationException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
 import java.io.IOException;
 
 public class TestRunner {
-
 
     @Test(priority = 1, description = "Customer can do Login Unsuccessfully With Wrong Email")
     public void doLoginWithWrongEmail() throws ConfigurationException, IOException {

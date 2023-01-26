@@ -99,11 +99,11 @@ public class CreateCustomer extends Setup {
                         .header("Authorization", prop.getProperty("TOKEN"))
                         .header("X-AUTH-SECRET-KEY", "ROADTOSDET")
                         .body("{\n" +
-                                "    \"name\":\"" + "Lindsey" + "\",\n" +
-                                "    \"email\":\"" +  "Lindsey@gmail.com" + "\",\n" +
-                                "    \"password\":\"" + "o5fhu5wj2" + "\",\n" +
-                                "    \"phone_number\":\"" + "01678959060" + "\",\n" +
-                                "    \"nid\":\"" + "1933957246" + "\",\n" +
+                                "    \"name\":\"" + "Dwight" + "\",\n" +
+                                "    \"email\":\"" +  "Dwight@gmail.com" + "\",\n" +
+                                "    \"password\":\"" + "b6b23bgtuu0" + "\",\n" +
+                                "    \"phone_number\":\"" + "01676383491" + "\",\n" +
+                                "    \"nid\":\"" + "1976230793" + "\",\n" +
                                 "    \"role\":\"Customer\"\n" +
                                 "}")
                         .when()
