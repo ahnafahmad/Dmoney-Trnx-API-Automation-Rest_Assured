@@ -28,7 +28,7 @@ public class LoginWithCustomer extends Setup {
         this.message = message;
     }
 
-    public void callingLoginAPI() throws ConfigurationException, IOException {
+    public void callingLoginAPI() throws ConfigurationException {
         RestAssured.baseURI = prop.getProperty("BASE_URL");
 
         Response res =

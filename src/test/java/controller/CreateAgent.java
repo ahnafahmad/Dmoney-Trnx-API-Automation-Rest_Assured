@@ -28,7 +28,7 @@ public class CreateAgent extends Setup {
         this.message = message;
     }
 
-    public void createAgent() throws IOException, ConfigurationException {
+    public void createAgent() throws ConfigurationException {
 
         Faker faker = new Faker();
 
@@ -52,7 +52,7 @@ public class CreateAgent extends Setup {
                                 "    \"password\":\"" + password + "\",\n" +
                                 "    \"phone_number\":\"" + phoneNumber + "\",\n" +
                                 "    \"nid\":\"" + nid + "\",\n" +
-                                "    \"role\":\"Agent\"\n" +
+                                "    \"nid\":\"" + role + "\",\n" +
                                 "}")
 //                        .body(createAgentModel)
                         .when()
@@ -68,7 +68,7 @@ public class CreateAgent extends Setup {
         Utils.setEnvVariable("Agent_Phone_Number", agentPhoneNumber);
     }
 
-    public void alreadyCreatedAgent() throws IOException, ConfigurationException {
+    public void alreadyCreatedAgent(){
 
         RestAssured.baseURI = prop.getProperty("BASE_URL");
 

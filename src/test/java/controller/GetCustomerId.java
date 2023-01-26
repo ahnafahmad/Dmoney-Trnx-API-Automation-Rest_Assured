@@ -49,7 +49,6 @@ public class GetCustomerId extends Setup {
         JsonPath jsonpath = res.jsonPath();
         System.out.println(jsonpath.get("user.id") == null);
         Assert.assertTrue(jsonpath.get("user.id") == null);
-
     }
 
 }

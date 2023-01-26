@@ -28,7 +28,7 @@ public class CreateCustomer extends Setup {
         this.message = message;
     }
 
-    public void createCustomer() throws IOException, ConfigurationException {
+    public void createCustomer() throws ConfigurationException {
 
         Faker faker = new Faker();
 
@@ -52,7 +52,7 @@ public class CreateCustomer extends Setup {
                                 "    \"password\":\"" + password + "\",\n" +
                                 "    \"phone_number\":\"" + phoneNumber + "\",\n" +
                                 "    \"nid\":\"" + nid + "\",\n" +
-                                "    \"role\":\"Customer\"\n" +
+                                "    \"nid\":\"" + role + "\",\n" +
                                 "}")
                         .when()
                         .post("/user/create")
@@ -89,7 +89,7 @@ public class CreateCustomer extends Setup {
 
     }
 
-    public void alreadyCreatedCustomer() throws IOException, ConfigurationException {
+    public void alreadyCreatedCustomer(){
 
         RestAssured.baseURI = prop.getProperty("BASE_URL");
 
@@ -99,11 +99,11 @@ public class CreateCustomer extends Setup {
                         .header("Authorization", prop.getProperty("TOKEN"))
                         .header("X-AUTH-SECRET-KEY", "ROADTOSDET")
                         .body("{\n" +
-                                "    \"name\":\"" + "Dwight" + "\",\n" +
-                                "    \"email\":\"" +  "Dwight@gmail.com" + "\",\n" +
-                                "    \"password\":\"" + "b6b23bgtuu0" + "\",\n" +
-                                "    \"phone_number\":\"" + "01676383491" + "\",\n" +
-                                "    \"nid\":\"" + "1976230793" + "\",\n" +
+                                "    \"name\":\"" + "Carly" + "\",\n" +
+                                "    \"email\":\"" +  "Carly@gmail.com" + "\",\n" +
+                                "    \"password\":\"" + "tnjqujds93c2iv1" + "\",\n" +
+                                "    \"phone_number\":\"" + "01675219856" + "\",\n" +
+                                "    \"nid\":\"" + "1966930000" + "\",\n" +
                                 "    \"role\":\"Customer\"\n" +
                                 "}")
                         .when()
@@ -114,6 +114,4 @@ public class CreateCustomer extends Setup {
         String message = jsonpath.get("message");
         setMessage(message);
     }
-
-
 }

@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class TestRunner {
 
-    @Test(priority = 1, description = "Customer can do Login Unsuccessfully With Wrong Email")
+    @Test(priority = 1, description = "Customer can not do Login successfully With Wrong Email")
     public void doLoginWithWrongEmail() throws ConfigurationException, IOException {
         LoginWithCustomer loginWithCustomer = new LoginWithCustomer();
         loginWithCustomer.loginApiWithWrongEmail("ahnaf@grr.la", "1234");
@@ -24,7 +24,6 @@ public class TestRunner {
         loginWithCustomer.callingLoginAPI();
         String messageExpected = "Login successfully";
         Assert.assertEquals(loginWithCustomer.getMessage(), messageExpected);
-
     }
 
     @Test(priority = 3, description = "Creating Customer Successfully")
@@ -34,7 +33,6 @@ public class TestRunner {
         createCustomer.createCustomer();
         String messageExpected = "User created successfully";
         Assert.assertEquals(createCustomer.getMessage(), messageExpected);
-
     }
 
     @Test(priority = 4, description = "The Customer is Already Created")
