@@ -11,7 +11,7 @@ import java.io.IOException;
 public class TestRunner {
 
     @Test(priority = 1, description = "Customer can not do Login successfully With Wrong Email")
-    public void doLoginWithWrongEmail() throws ConfigurationException, IOException {
+    public void doLoginWithWrongEmail() throws IOException {
         LoginWithCustomer loginWithCustomer = new LoginWithCustomer();
         loginWithCustomer.loginApiWithWrongEmail("ahnaf@grr.la", "1234");
         String messageExpected = "User not found";
@@ -36,7 +36,7 @@ public class TestRunner {
     }
 
     @Test(priority = 4, description = "The Customer is Already Created")
-    public void alreadyCreatedCustomer() throws IOException, ConfigurationException {
+    public void alreadyCreatedCustomer() throws IOException{
 
         CreateCustomer createCustomer = new CreateCustomer();
         createCustomer.alreadyCreatedCustomer();
@@ -72,7 +72,7 @@ public class TestRunner {
     }
 
     @Test(priority = 8, description = "The Agent is Already Created")
-    public void alreadyCreatedAgent() throws IOException, ConfigurationException {
+    public void alreadyCreatedAgent() throws IOException{
 
         CreateAgent createAgent = new CreateAgent();
         createAgent.alreadyCreatedAgent();
@@ -92,7 +92,7 @@ public class TestRunner {
     }
 
     @Test(priority = 10, description = "Depositing Money To Agent Unsuccessfully With Insufficient Money")
-    public void UnsuccessfullDepositToAgent() throws IOException {
+    public void unsuccessfullyDepositToAgent() throws IOException {
 
         DepositToAgent depositToAgent = new DepositToAgent();
         depositToAgent.InsufficientMoneyForDepositingToAgent();
@@ -119,7 +119,7 @@ public class TestRunner {
     }
 
     @Test(priority = 13, description = "Depositing Money To Customer Successfully")
-    public void depositToCustomerSuccessfully() throws IOException, ConfigurationException {
+    public void depositToCustomerSuccessfully() throws IOException{
 
         DepositToCustomer depositToCustomer = new DepositToCustomer();
         depositToCustomer.successfullDepositToCustomer();
@@ -129,7 +129,7 @@ public class TestRunner {
     }
 
     @Test(priority = 14, description = "Depositing Money To Agent Unsuccessfully With Invalid Customer Number")
-    public void depositToInvalidCustomer() throws IOException, ConfigurationException {
+    public void depositToInvalidCustomer() throws IOException {
 
         DepositToCustomer depositToCustomer = new DepositToCustomer();
         depositToCustomer.depositToInvalidCustomer();
@@ -165,7 +165,7 @@ public class TestRunner {
     }
 
     @Test(priority = 18, description = "Customer Can not Withdraw Money with Invalid Agent Number")
-    public void moneyWithdrawByCustomerInvalidAgent() throws IOException, ConfigurationException {
+    public void moneyWithdrawByCustomerInvalidAgent() throws IOException{
 
         MoneyWithdrawByCustomer moneyWithdrawByCustomer = new MoneyWithdrawByCustomer();
         moneyWithdrawByCustomer.moneyWithdrawByCustomerWithInvalidAgentNumber();
@@ -187,7 +187,7 @@ public class TestRunner {
 
 
     @Test(priority = 20, description = "Customer Can not Send Money to Another Customer Without Amount of Money")
-    public void sendMoneyByCustomerWthoutMoneyAmount() throws IOException {
+    public void sendMoneyByCustomerWithoutMoneyAmount() throws IOException {
 
         SendMoneyByNewlyCreatedCustomer sendMoneyByNewlyCreatedCustomer = new SendMoneyByNewlyCreatedCustomer();
         sendMoneyByNewlyCreatedCustomer.sendMoneyByCustomerWithoutMoneyAmount();

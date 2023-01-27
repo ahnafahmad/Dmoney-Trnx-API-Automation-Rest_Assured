@@ -52,7 +52,7 @@ public class CreateAgent extends Setup {
                                 "    \"password\":\"" + password + "\",\n" +
                                 "    \"phone_number\":\"" + phoneNumber + "\",\n" +
                                 "    \"nid\":\"" + nid + "\",\n" +
-                                "    \"nid\":\"" + role + "\",\n" +
+                                "    \"role\":\"Agent\"\n" +
                                 "}")
 //                        .body(createAgentModel)
                         .when()

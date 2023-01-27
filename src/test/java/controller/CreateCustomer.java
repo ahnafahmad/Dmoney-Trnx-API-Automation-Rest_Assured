@@ -52,11 +52,12 @@ public class CreateCustomer extends Setup {
                                 "    \"password\":\"" + password + "\",\n" +
                                 "    \"phone_number\":\"" + phoneNumber + "\",\n" +
                                 "    \"nid\":\"" + nid + "\",\n" +
-                                "    \"nid\":\"" + role + "\",\n" +
+                                "    \"role\":\"Customer\"\n" +
                                 "}")
                         .when()
                         .post("/user/create")
-                        .then().assertThat().statusCode(201).extract().response();
+                        .then()
+                        .assertThat().statusCode(201).extract().response();
 
         JsonPath jsonpath = res.jsonPath();
         String message = jsonpath.get("message");

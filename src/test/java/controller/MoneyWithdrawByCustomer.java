@@ -66,7 +66,6 @@ public class MoneyWithdrawByCustomer extends Setup {
                         .body("{\n" +
                                 "    \"from_account\":\""+prop.getProperty("Customer_Phone_Number")+"\",\n" +
                                 "    \"to_account\":\"01924596314\",\n" +
-
                                 "    \"amount\":50\n" +
                                 "}")
                         .when()

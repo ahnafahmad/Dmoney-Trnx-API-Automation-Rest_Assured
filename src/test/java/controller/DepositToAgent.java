@@ -38,7 +38,6 @@ public class DepositToAgent extends Setup {
                         .body("{\n" +
                                 "    \"from_account\":\"SYSTEM\",\n" +
                                 "    \"to_account\":\"" + prop.getProperty("Agent_Phone_Number") + "\",\n" +
-
                                 "    \"amount\":100\n" +
                                 "}")
                         .when()
